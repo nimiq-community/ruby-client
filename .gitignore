@@ -9,6 +9,10 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/.idea/
+/.ignore/
+*.swp
+.DS_Store
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -35,7 +39,6 @@ build-iPhoneSimulator/
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
-/doc/
 /rdoc/
 
 ## Environment normalization:
