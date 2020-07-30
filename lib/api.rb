@@ -64,13 +64,13 @@ module Api
     return result
   end
 
-  # # new: update with more info
-  # # get_raw_transaction_info - Checks signed_transaction raw information.
-  # # - @param [String] signed_transaction - The hex encoded signed transaction.
-  # def get_raw_transaction_info(signed_transaction)
-  #   result = @rpc.request("getRawTransactionInfo", signed_transaction)
-  #   return result
-  # end
+  # NEW
+  # get_raw_transaction_info - Checks signed_transaction raw information.
+  # - @param [String] signed_transaction - The hex encoded signed transaction.
+  def get_raw_transaction_info(signed_transaction)
+    result = @rpc.request("getRawTransactionInfo", signed_transaction)
+    return result
+  end
 
   # get_account - Returns details for the account of given address.
   # - @param [String] address - Address to get account details.

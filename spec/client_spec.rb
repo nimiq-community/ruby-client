@@ -16,7 +16,6 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "ruby-client"
-# require "minitest/autorun"
 
 describe "Nimiq", type: :request do
 
@@ -29,7 +28,9 @@ describe "Nimiq", type: :request do
       pass: "pass",
     # dev: true,
     }
-    @signed_transaction = "010000...abcdef"
+    @main_addr = "NQ70 46LN 1SKC KGFN VV8U G92N XC4X 9VFB SBVJ" # Node address
+    @seco_addr = "NQ27 B9ED 98G5 3VH7 FY8D BFP0 XNF4 BD8L TN4B" # Some address
+    @signed_transaction = "000000.......1A84FA23" # get this by running Makes @signed_transaction
     @nimiq = Nimiq::Client.new(options)
   end
 
@@ -52,7 +53,7 @@ describe "Nimiq", type: :request do
     end
   end
 
-  # Test suite for api
+  # Test suite for API
   describe "Api" do
 
     # Test suite for client to retrieve the addresses owned by client.
@@ -86,24 +87,6 @@ describe "Nimiq", type: :request do
       expect(@nimiq.create_account()).to be_a_kind_of(Object)
     end
 
-    # Test suite for client to create a transaction without sending it.
-    it "Must be able to create a transaction without sending it." do
-      transaction = {
-        "from": "NQ94 VESA PKTA 9YQ0 XKGC HVH0 Q9DF VSFU STSP",
-        "to": "NQ16 61ET MB3M 2JG6 TBLK BR0D B6EA X6XQ L91U",
-        "value": 100000,
-        "fee": 0,
-      }
-      expect(@nimiq.create_raw_transaction(transaction)).to be_a_kind_of(Object)
-    end
-
-    # # new
-    # # Test suite for client to retrieve a transaction information.
-    # it "Must be able to retrieve a transaction information." do
-    #   # signed_transaction = "010000...abcdef"
-    #   expect(@nimiq.get_raw_transaction_info(@signed_transaction)).to be_a_kind_of(Object)
-    # end
-
     # Test suite for client to retrieve information related to an account.
     it "Must be able to retrieve information related to an account." do
       expect(@nimiq.get_account("NQ30 JLD6 U347 DFVU 40J3 F93V 9TCF YMMX RKY3")).to be_a_kind_of(Object)
@@ -111,7 +94,9 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve balance of account.
     it "Must be able to retrieve balance of account." do
-      expect(@nimiq.get_balance("NQ30 JLD6 U347 DFVU 40J3 F93V 9TCF YMMX RKY3")).to be_a_kind_of(Numeric)
+      #   puts @nimiq.get_balance("NQ30 JLD6 U347 DFVU 40J3 F93V 9TCF YMMX RKY3") # miner
+      #   puts @nimiq.get_balance("NQ70 46LN 1SKC KGFN VV8U G92N XC4X 9VFB SBVJ") # this rpc
+      expect(@nimiq.get_balance(@main_addr)).to be_a_kind_of(Numeric)
     end
 
     # Test suite for client to retrieve block by hash.
@@ -161,7 +146,7 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve the information about a transaction requested by transaction hash.
     it "Must be able to retrieve the information about a transaction requested by transaction hash." do
-      expect(@nimiq.get_transaction_by_hash("9eb228482138a8e64c5bb60608979904aa2be5721c115a9e3db54a0c481bb398")).to be_a_kind_of(Object)
+      expect(@nimiq.get_transaction_by_hash("465a63b73aa0b9b54b777be9a585ea00b367a17898ad520e1f22cb2c986ff554")).to be_a_kind_of(Object)
     end
 
     # Test suite for client to retrieve the receipt of a transaction by transaction hash.
@@ -264,32 +249,53 @@ describe "Nimiq", type: :request do
       expect(@nimiq.pool_connection_state()).to be_a_kind_of(Numeric)
     end
 
-    # Test suite for client to send a signed message call transaction or a contract creation, if the data field contains code.
-    it "Must be able to send a signed message call transaction or a contract creation, if the data field contains code." do
-      # signed_transaction = "010000...abcdef"
-      expect(@nimiq.send_raw_transaction(@signed_transaction)).to be_a_kind_of(Object)
-    end
-
-    # Test suite for client to create new message call transaction or a contract creation, if the data field contains code.
-    it "Must be able to create new message call transaction or a contract creation, if the data field contains code." do
+    # Makes @signed_transaction
+    # Test suite for client to create a transaction without sending it.
+    it "Must be able to create a transaction without sending it." do
       transaction = {
-        "from": "NQ94 VESA PKTA 9YQ0 XKGC HVH0 Q9DF VSFU STSP",
-        "to": "NQ16 61ET MB3M 2JG6 TBLK BR0D B6EA X6XQ L91U",
-        "value": 100000,
+        "from": @main_addr,
+        "to": @seco_addr,
+        "value": 100,
         "fee": 0,
       }
-      expect(@nimiq.send_transaction(transaction)).to be_a_kind_of(Object)
+      @signed_transaction = @nimiq.create_raw_transaction(transaction)
+      expect(@signed_transaction).to be_a_kind_of(Object)
     end
 
-    # Test suite for client to submit a block to the node.
-    it "Must be able to submit a block to the node." do
-      block = "00000000"
-      expect(@nimiq.submit_block(block)).to be_a_kind_of(Numeric)
+    # NEW
+    # Test suite for client to retrieve a transaction information.
+    it "Must be able to retrieve a transaction information." do
+      expect(@nimiq.get_raw_transaction_info(@signed_transaction)).to be_a_kind_of(Object)
     end
+
+    # # Must have at least some NIM to be able to send it to another address
+    # # Test suite for client to send a signed message call transaction or a contract creation, if the data field contains code.
+    # it "Must be able to send a signed message call transaction or a contract creation, if the data field contains code." do
+    #   expect(@nimiq.send_raw_transaction(@signed_transaction)).to be_a_kind_of(Object)
+    # end
+
+    # # Must have at least some NIM to be able to send it to another address
+    # # Test suite for client to create new message call transaction or a contract creation, if the data field contains code.
+    # it "Must be able to create new message call transaction or a contract creation, if the data field contains code." do
+    #   transaction = {
+    #     "from": @main_addr,
+    #     "to": @seco_addr,
+    #     "value": 100,
+    #     "fee": 0,
+    #   }
+    #   expect(@nimiq.send_transaction(transaction)).to be_a_kind_of(Object)
+    # end
+
+    # # Must have a valid generated block for the blockchain to accept, returns nothing if block is valid
+    # # Test suite for client to submit a block to the node.
+    # it "Must be able to submit a block to the node." do
+    #   block = "14c91f6d6f3a0b62271e546bb09461231ab7e4d1ddc2c3e1b93de52d48a1da87"
+    #   expect(@nimiq.submit_block(block)).to be("")
+    # end
 
     # Test suite for client to retrieve an object with data about the sync status.
     it "Must be able to retrieve an object with data about the sync status." do
-      expect(@nimiq.syncing()).to be(true).or be(false)
+      expect(@nimiq.syncing()[:startingBlock]).to be > 0
     end
   end
 end
