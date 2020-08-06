@@ -18,6 +18,10 @@ Fast, easy and fun to use! for more information visit the [Nimiq website](https:
 ```
 gem install ruby-client
 ```
+> or add in `Gemfile`
+```
+gem "ruby-client"
+```
 
 **Start using the Nimiq Ruby Client:**
 
