@@ -60,11 +60,12 @@
   <h3>Table of Contents</h3>
 
   <ul class="link-list" role="directory">
-    <li><a href="#label-Nimiq+Ruby+RPC+Client">Nimiq Ruby RPC Client</a>
-    <li><a href="#label-Info">Info</a>
+    <li><a href="#label-Nimiq+Blockchain+-+Ruby+RPC+Client">Nimiq Blockchain - Ruby RPC Client</a>
+    <li><a href="#label-Information">Information</a>
     <li><a href="#label-What+is+Nimiq-3F">What is Nimiq?</a>
     <li><a href="#label-Usage">Usage</a>
-    <li><a href="#label-Development">Development</a>
+    <li><a href="#label-Documentation">Documentation</a>
+    <li><a href="#label-Developments">Developments</a>
     <li><a href="#label-Contributions">Contributions</a>
     <li><a href="#label-License">License</a>
   </ul>
@@ -99,29 +100,33 @@
 
 <main role="main" aria-label="Page README.md">
 
-<h1 id="label-Nimiq+Ruby+RPC+Client"><a href="Nimiq.html"><code>Nimiq</code></a> Ruby RPC Client<span><a href="#label-Nimiq+Ruby+RPC+Client">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<h1 id="label-Nimiq+Blockchain+-+Ruby+RPC+Client"><a href="Nimiq.html"><code>Nimiq</code></a> Blockchain - Ruby RPC Client<span><a href="#label-Nimiq+Blockchain+-+Ruby+RPC+Client">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <blockquote>
 <p>Ruby implementation of the <a href="Nimiq.html"><code>Nimiq</code></a> RPC client specs.</p>
 </blockquote>
 
-<h2 id="label-Info">Info<span><a href="#label-Info">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-Information">Information<span><a href="#label-Information">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p><a href="Nimiq.html"><code>Nimiq</code></a> Ruby RPC client. It will allow you to interact with the <a href="Nimiq.html"><code>Nimiq</code></a> Blockchain, to collect data, sync with the network etc.. This library covers all the current <a href="https://github.com/nimiq/core-js/wiki/JSON-RPC-API#remotejs-client">Nimiq JSON-RPC specification</a>.</p>
+<p><a href="Nimiq.html"><code>Nimiq</code></a> Ruby RPC client. It will allow you to interact with the <a href="Nimiq.html"><code>Nimiq</code></a> blockchain, collect data, update data, sync and more. This library covers all the current <a href="https://github.com/nimiq/core-js/wiki/JSON-RPC-API#remotejs-client">Nimiq JSON-RPC specification</a>.</p>
 
 <h1 id="label-What+is+Nimiq-3F">What is <a href="Nimiq.html"><code>Nimiq</code></a>?<span><a href="#label-What+is+Nimiq-3F">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Inspired by the Bitcoin, <a href="Nimiq.html"><code>Nimiq</code></a> is a blockchain / cryptocurrency that runs in your browser seamlessly.</p>
+<p>Inspired by Bitcoin, <a href="Nimiq.html"><code>Nimiq</code></a> is a blockchain that seamlessly runs in your browser.</p>
 
-<p>Fast, easy and fun to use, for more information visit the <a href="https://www.nimiq.com/">Nimiq website</a>.</p>
+<p>Fast, easy and fun to use! for more information visit the <a href="https://www.nimiq.com/">Nimiq website</a>.</p>
 
-<h3 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Example to use this ruby client:</p>
+<p><strong>Installation:</strong> (<strong><a href="https://rubygems.org/gems/ruby-client">Gem</a></strong>) <code> gem install ruby-client </code></p>
 
-<pre class="ruby"><span class="ruby-identifier">options</span> = {
+<p><strong>Start using the <a href="Nimiq.html"><code>Nimiq</code></a> Ruby Client:</strong></p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;ruby-client&quot;</span>
+
+<span class="ruby-identifier">options</span> = {
   <span class="ruby-value">host:</span> <span class="ruby-string">&quot;http://127.0.0.1&quot;</span>,
-  <span class="ruby-value">port:</span> <span class="ruby-string">&quot;8000&quot;</span>,
+  <span class="ruby-value">port:</span> <span class="ruby-string">&quot;8648&quot;</span>,
   <span class="ruby-comment"># user: &quot;user&quot;,</span>
   <span class="ruby-comment"># pass: &quot;pass&quot;,</span>
   <span class="ruby-comment"># uri: &quot;http://USER:PASS@IP:PORT&quot;,</span>
@@ -134,11 +139,17 @@
 <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;My account balance #{get_balance}&quot;</span>
 </pre>
 
-<h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>This section is for developments. If you only want to use this client go to the <a href="#Usage">Usage</a> section. After cloning the repo, run <code>bundle</code> to install the required dependencies. For testing it requires a running <a href="Nimiq.html"><code>Nimiq</code></a> RPC node, to connect to. You can then run tests by typing <code>rspec --format documentation</code>.</p>
+<p>To know more about what you can possibly do using this library, check the <a href="https://jxdv.github.io/ruby-client/">documentation</a>.</p>
 
-<p>For a private node connection that require a username/password, don&#39;t forget to set these in the configuration spec file.</p>
+<h2 id="label-Developments">Developments<span><a href="#label-Developments">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>This section is for developments. If you only want to use this client go to the <a href="#Usage">Usage</a> section. After cloning the repo, run <code>bundle</code> to install the required dependencies.</p>
+
+<p><strong>Testing</strong>: Run tests by typing <strong><code>rspec --format documentation</code></strong>. If you are connecting to a private node that requires username and password, don&#39;t forget to set set these on the <code>options</code> object in the configuration spec file.</p>
+
+<p>Note that it requires a running <a href="Nimiq.html"><code>Nimiq</code></a> RPC node, to connect to.</p>
 
 <h2 id="label-Contributions">Contributions<span><a href="#label-Contributions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 

@@ -61,7 +61,18 @@
     
     
     
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
     
+  
+    <li><span class="extend">T::Sig</span>
+  
+  
+  </ul>
+</div>
+
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
   <h3>Methods</h3>
@@ -93,6 +104,8 @@
     <li ><a href="#method-i-get_block_transaction_count_by_hash">#get_block_transaction_count_by_hash</a>
     
     <li ><a href="#method-i-get_block_transaction_count_by_number">#get_block_transaction_count_by_number</a>
+    
+    <li ><a href="#method-i-get_raw_transaction_info">#get_raw_transaction_info</a>
     
     <li ><a href="#method-i-get_transaction_by_block_hash_and_index">#get_transaction_by_block_hash_and_index</a>
     
@@ -155,15 +168,6 @@
 
   <section class="description">
     
-<p>Copyright 2020 <a href="Nimiq.html"><code>Nimiq</code></a> community.</p>
-
-<p>Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
-
-<pre class="ruby"><span class="ruby-identifier">http</span><span class="ruby-value">:/</span><span class="ruby-operator">/</span><span class="ruby-identifier">www</span>.<span class="ruby-identifier">apache</span>.<span class="ruby-identifier">org</span><span class="ruby-operator">/</span><span class="ruby-identifier">licenses</span><span class="ruby-operator">/</span><span class="ruby-constant">LICENSE</span><span class="ruby-value">-2.0</span>
-</pre>
-
-<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
-
   </section>
 
   
@@ -217,13 +221,13 @@
 
         <div class="method-description">
           
-          <p>accounts - Returns a list of addresses owned by client.</p>
+          
           
           
 
           
           <div class="method-source-code" id="accounts-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accounts</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;accounts&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -251,13 +255,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-block_number"><code>block_number</code></a> - Returns the height of most recent block.</p>
+          
           
           
 
           
           <div class="method-source-code" id="block_number-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">block_number</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;blockNumber&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -285,13 +289,13 @@
 
         <div class="method-description">
           
-          <p>consensus - Returns information on the current consensus state.</p>
+          
           
           
 
           
           <div class="method-source-code" id="consensus-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">consensus</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;consensus&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -319,18 +323,13 @@
 
         <div class="method-description">
           
-          <p>constant - Returns or overrides a constant value. When no parameter is given, it returns the value of the constant. When giving a value as parameter, it sets the constant to the given value. To reset the constant to the default value, the parameter “reset” should be used.</p>
-<ul><li>
-<p>@param [String] name - The class and name of the constant. (format should be Class.CONSTANT)</p>
-</li><li>
-<p>@param [Integer] value - The new value of the constant or “reset”. (optional)</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="constant-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 44</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">constant</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;constant&quot;</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
@@ -362,13 +361,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-create_account"><code>create_account</code></a> - Creates a new account and stores its private key in the client store.</p>
+          
           
           
 
           
           <div class="method-source-code" id="create_account-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_account</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;createAccount&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -396,16 +395,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-create_raw_transaction"><code>create_raw_transaction</code></a> - Creates and signs a transaction without sending it. The transaction can then be send via `send_raw_transaction` without accidentally replaying it.</p>
-<ul><li>
-<p>@param [TransactionObject] transaction - The transaction object.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="create_raw_transaction-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_raw_transaction</span>(<span class="ruby-identifier">transaction</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;createRawTransaction&quot;</span>, <span class="ruby-identifier">transaction</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -433,16 +429,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_account"><code>get_account</code></a> - Returns details for the account of given address.</p>
-<ul><li>
-<p>@param [String] address - Address to get account details.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_account-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_account</span>(<span class="ruby-identifier">address</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getAccount&quot;</span>, <span class="ruby-identifier">address</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -470,16 +463,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_balance"><code>get_balance</code></a> - Returns the balance of the account of given address.</p>
-<ul><li>
-<p>@param [String] address - Address to check for balance.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_balance-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 84</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_balance</span>(<span class="ruby-identifier">address</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBalance&quot;</span>, <span class="ruby-identifier">address</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -507,18 +497,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_block_by_hash"><code>get_block_by_hash</code></a> - Returns information about a block by hash.</p>
-<ul><li>
-<p>@param [String] block_hash - Hash of the block to gather information on.</p>
-</li><li>
-<p>@param [Boolean] full_transactions (optional) - If true it returns the full transaction objects, if false only the hashes of the transactions. (default false)</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_block_by_hash-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_by_hash</span>(<span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">full_transactions</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_transactions</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByHash&quot;</span>, <span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">full_transactions</span>)
@@ -550,18 +535,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_block_by_number"><code>get_block_by_number</code></a> - Returns information about a block by block number.</p>
-<ul><li>
-<p>@param [Integer] <a href="Api.html#method-i-block_number"><code>block_number</code></a> - The height of the block to gather information on.</p>
-</li><li>
-<p>@param [Boolean] full_transactions (optional) - If true it returns the full transaction objects, if false only the hashes of the transactions. (default false)</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_block_by_number-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 104</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 130</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_by_number</span>(<span class="ruby-identifier">block_number</span>, <span class="ruby-identifier">full_transactions</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_transactions</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByNumber&quot;</span>, <span class="ruby-identifier">block_number</span>, <span class="ruby-identifier">full_transactions</span>)
@@ -584,7 +564,7 @@
         
         <div class="method-heading">
           <span class="method-name">get_block_template</span><span
-            class="method-args">(address = nil, dada_field = nil)</span>
+            class="method-args">(address = nil, data_field = nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -593,19 +573,14 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_block_template"><code>get_block_template</code></a> - Returns a template to build the next block for mining. This will consider pool instructions when connected to a pool.</p>
-<ul><li>
-<p>@param [String] address (optional) - Address to use as a miner for this block. This overrides the address provided during startup or from the pool.</p>
-</li><li>
-<p>@param [String] dada_field (optional) - Hex-encoded value for the extra data field. This overrides the address provided during startup or from the pool.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_block_template-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 117</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_template</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">dada_field</span> = <span class="ruby-keyword">nil</span>)
+            <pre><span class="ruby-comment"># File lib/api.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_template</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data_field</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTemplate&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
@@ -632,16 +607,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_block_transaction_count_by_hash"><code>get_block_transaction_count_by_hash</code></a> - Returns the number of transactions in a block from a block matching the given block hash.</p>
-<ul><li>
-<p>@param [String] block_hash - Hash of the block.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_block_transaction_count_by_hash-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 154</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_transaction_count_by_hash</span>(<span class="ruby-identifier">block_hash</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTransactionCountByHash&quot;</span>, <span class="ruby-identifier">block_hash</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -669,18 +641,49 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_block_transaction_count_by_number"><code>get_block_transaction_count_by_number</code></a> - Returns the number of transactions in a block matching the given block number.</p>
-<ul><li>
-<p>@param [Integer] <a href="Api.html#method-i-block_number"><code>block_number</code></a> - Height of the block.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_block_transaction_count_by_number-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 131</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 163</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_transaction_count_by_number</span>(<span class="ruby-identifier">block_number</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTransactionCountByNumber&quot;</span>, <span class="ruby-identifier">block_number</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_raw_transaction_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_raw_transaction_info</span><span
+            class="method-args">(signed_transaction)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_raw_transaction_info-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_raw_transaction_info</span>(<span class="ruby-identifier">signed_transaction</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getRawTransactionInfo&quot;</span>, <span class="ruby-identifier">signed_transaction</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -706,18 +709,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_transaction_by_block_hash_and_index"><code>get_transaction_by_block_hash_and_index</code></a> - Returns information about a transaction by block hash and transaction index position.</p>
-<ul><li>
-<p>@param [Integer] block_hash - Hash of the block containing the transaction.</p>
-</li><li>
-<p>@param [Integer] transaction_index - Index of the transaction in the block.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_transaction_by_block_hash_and_index-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 139</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 173</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_block_hash_and_index</span>(<span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">transaction_index</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByBlockHashAndIndex&quot;</span>, <span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">transaction_index</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -736,7 +734,7 @@
         
         <div class="method-heading">
           <span class="method-name">get_transaction_by_block_number_and_index</span><span
-            class="method-args">(block_height, transaction_index)</span>
+            class="method-args">(block_hash_index, transaction_index)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -745,20 +743,15 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_transaction_by_block_number_and_index"><code>get_transaction_by_block_number_and_index</code></a> - Returns information about a transaction by block number and transaction index position.</p>
-<ul><li>
-<p>@param [Integer] block_height - Height of the block containing the transaction.</p>
-</li><li>
-<p>@param [Integer] transaction_index - Index of the transaction in the block.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_transaction_by_block_number_and_index-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 147</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_block_number_and_index</span>(<span class="ruby-identifier">block_height</span>, <span class="ruby-identifier">transaction_index</span>)
-  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByBlockNumberAndIndex&quot;</span>, <span class="ruby-identifier">block_height</span>, <span class="ruby-identifier">transaction_index</span>)
+            <pre><span class="ruby-comment"># File lib/api.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_block_number_and_index</span>(<span class="ruby-identifier">block_hash_index</span>, <span class="ruby-identifier">transaction_index</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByBlockNumberAndIndex&quot;</span>, <span class="ruby-identifier">block_hash_index</span>, <span class="ruby-identifier">transaction_index</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -784,16 +777,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_transaction_by_hash"><code>get_transaction_by_hash</code></a> - Returns the information about a transaction requested by transaction hash.</p>
-<ul><li>
-<p>@param [String] transaction_hash - Hash of a transaction.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_transaction_by_hash-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 154</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 192</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_hash</span>(<span class="ruby-identifier">transaction_hash</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByHash&quot;</span>, <span class="ruby-identifier">transaction_hash</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -821,16 +811,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_transaction_receipt"><code>get_transaction_receipt</code></a> - Returns the receipt of a transaction by transaction hash. Note That the receipt is not available for pending transactions.</p>
-<ul><li>
-<p>@param [String] transaction_hash - Hash of a transaction.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_transaction_receipt-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 162</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 202</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_receipt</span>(<span class="ruby-identifier">transaction_hash</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionReceipt&quot;</span>, <span class="ruby-identifier">transaction_hash</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -858,18 +845,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_transactions_by_address"><code>get_transactions_by_address</code></a> - Returns the latest transactions successfully performed by or for an address.</p>
-<ul><li>
-<p>@param [String] address - Address of which transactions should be gathered.</p>
-</li><li>
-<p>@param [Integer] transactions_number (optional) - Number of transactions that shall be returned. (default 1000)</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_transactions_by_address-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 170</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 212</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transactions_by_address</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">transactions_number</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">transactions_number</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionsByAddress&quot;</span>, <span class="ruby-identifier">address</span>, <span class="ruby-identifier">transactions_number</span>)
@@ -892,7 +874,7 @@
         
         <div class="method-heading">
           <span class="method-name">get_work</span><span
-            class="method-args">(address = nil, dada_field = nil)</span>
+            class="method-args">(address = nil, data_field = nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -901,20 +883,15 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-get_work"><code>get_work</code></a> - Returns instructions to mine the next block. This will consider pool instructions when connected to a pool.</p>
-<ul><li>
-<p>@param [String] address (optional) - Address to use as a miner for this block. This overrides the address provided during startup or from the pool.</p>
-</li><li>
-<p>@param [String] dada_field (optional) - Hex-encoded value for the extra data field. This overrides the address provided during startup or from the pool.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="get_work-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 182</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_work</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">dada_field</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getWork&quot;</span>, <span class="ruby-identifier">address</span>, <span class="ruby-identifier">dada_field</span>)
+            <pre><span class="ruby-comment"># File lib/api.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_work</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data_field</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getWork&quot;</span>, <span class="ruby-identifier">address</span>, <span class="ruby-identifier">data_field</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -940,13 +917,13 @@
 
         <div class="method-description">
           
-          <p>hashrate - Returns the number of hashes per second that the node is mining with.</p>
+          
           
           
 
           
           <div class="method-source-code" id="hashrate-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 188</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 234</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hashrate</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;hashrate&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -974,18 +951,13 @@
 
         <div class="method-description">
           
-          <p>log - Sets the log level of the node.</p>
-<ul><li>
-<p>@param [String] tag - If the tag is &#39;*&#39; the log level will be set globally, otherwise the log level is applied only on this tag.</p>
-</li><li>
-<p>@param [String] log_level - Log levels valid options: `trace`, `verbose`, `debug`, `info`, `warn`, `error`, `assert`.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="log-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 196</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 244</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">log</span>(<span class="ruby-identifier">tag</span>, <span class="ruby-identifier">log_level</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;log&quot;</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">log_level</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1013,13 +985,13 @@
 
         <div class="method-description">
           
-          <p>mempool - Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit).</p>
+          
           
           
 
           
           <div class="method-source-code" id="mempool-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 202</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 252</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mempool</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mempool&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1038,7 +1010,7 @@
         
         <div class="method-heading">
           <span class="method-name">mempool_content</span><span
-            class="method-args">()</span>
+            class="method-args">(include_full_transactions = nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -1047,14 +1019,14 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-mempool_content"><code>mempool_content</code></a> - Returns transactions that are currently in the mempool.</p>
+          
           
           
 
           
           <div class="method-source-code" id="mempool_content-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 208</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mempool_content</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mempool_content</span>(<span class="ruby-identifier">include_full_transactions</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mempoolContent&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
@@ -1081,16 +1053,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-min_fee_per_byte"><code>min_fee_per_byte</code></a> - Returns or sets the minimum fee per byte.</p>
-<ul><li>
-<p>@param [Integer] set_min_fee (optional) - The new minimum fee per byte.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="min_fee_per_byte-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 232</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 290</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_fee_per_byte</span>(<span class="ruby-identifier">set_min_fee</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">set_min_fee</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minFeePerByte&quot;</span>, <span class="ruby-identifier">set_min_fee</span>)
@@ -1122,13 +1091,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-miner_address"><code>miner_address</code></a> - Returns the miner address.</p>
+          
           
           
 
           
           <div class="method-source-code" id="miner_address-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 214</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 268</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">miner_address</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minerAddress&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1156,16 +1125,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-miner_threads"><code>miner_threads</code></a> - Returns or sets the number of CPU threads for the miner.</p>
-<ul><li>
-<p>@param [Integer] set_threads (optional) - The number of threads to allocate for mining.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="miner_threads-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 221</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 277</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">miner_threads</span>(<span class="ruby-identifier">set_threads</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">set_threads</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minerThreads&quot;</span>, <span class="ruby-identifier">set_threads</span>)
@@ -1197,13 +1163,13 @@
 
         <div class="method-description">
           
-          <p>mining - Returns `true` if client is actively mining new blocks.</p>
+          
           
           
 
           
           <div class="method-source-code" id="mining-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 242</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 302</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mining</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mining&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1231,13 +1197,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-peer_count"><code>peer_count</code></a> - Returns number of peers currently connected to the client.</p>
+          
           
           
 
           
           <div class="method-source-code" id="peer_count-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 248</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 310</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_count</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerCount&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1265,13 +1231,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-peer_list"><code>peer_list</code></a> - Returns list of peers known to the client.</p>
+          
           
           
 
           
           <div class="method-source-code" id="peer_list-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 254</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 318</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_list</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerList&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1299,16 +1265,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-peer_state"><code>peer_state</code></a> - Returns the state of the peer.</p>
-<ul><li>
-<p>@param [String] peer_address - The address of the peer.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="peer_state-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 261</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 327</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_state</span>(<span class="ruby-identifier">peer_address</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerState&quot;</span>, <span class="ruby-identifier">peer_address</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1327,7 +1290,7 @@
         
         <div class="method-heading">
           <span class="method-name">pool</span><span
-            class="method-args">(pool_address = nil)</span>
+            class="method-args">(pool_address_or_action = nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -1336,19 +1299,16 @@
 
         <div class="method-description">
           
-          <p>pool - Returns or sets the mining pool. When no parameter is given, it returns the current mining pool. When a value is given as parameter, it sets the mining pool to that value.</p>
-<ul><li>
-<p>@param [String/Boolean] pool_address (optional) - The mining pool connection string (url:port) or boolean to enable/disable pool mining.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="pool-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 269</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool</span>(<span class="ruby-identifier">pool_address</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pool_address</span>
-    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;pool&quot;</span>, <span class="ruby-identifier">pool_address</span>)
+            <pre><span class="ruby-comment"># File lib/api.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool</span>(<span class="ruby-identifier">pool_address_or_action</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pool_address_or_action</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;pool&quot;</span>, <span class="ruby-identifier">pool_address_or_action</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;pool&quot;</span>)
   <span class="ruby-keyword">end</span>
@@ -1377,13 +1337,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-pool_confirmed_balance"><code>pool_confirmed_balance</code></a> - Returns the confirmed mining pool balance.</p>
+          
           
           
 
           
           <div class="method-source-code" id="pool_confirmed_balance-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 279</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 349</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool_confirmed_balance</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;poolConfirmedBalance&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1411,13 +1371,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-pool_connection_state"><code>pool_connection_state</code></a> - Returns the connection state to mining pool.</p>
+          
           
           
 
           
           <div class="method-source-code" id="pool_connection_state-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 285</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 357</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool_connection_state</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;poolConnectionState&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1445,16 +1405,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-send_raw_transaction"><code>send_raw_transaction</code></a> - Sends a signed message call transaction or a contract creation, if the data field contains code.</p>
-<ul><li>
-<p>@param [String] signed_transaction - The hex encoded signed transaction.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="send_raw_transaction-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 292</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 366</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_raw_transaction</span>(<span class="ruby-identifier">signed_transaction</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;sendRawTransaction&quot;</span>, <span class="ruby-identifier">signed_transaction</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1482,16 +1439,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-send_transaction"><code>send_transaction</code></a> - Creates new message call transaction or a contract creation, if the data field contains code.</p>
-<ul><li>
-<p>@param [TransactionObject] transaction - The transaction object.</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="send_transaction-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 299</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 375</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_transaction</span>(<span class="ruby-identifier">transaction</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;sendTransaction&quot;</span>, <span class="ruby-identifier">transaction</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1519,16 +1473,13 @@
 
         <div class="method-description">
           
-          <p><a href="Api.html#method-i-submit_block"><code>submit_block</code></a> - Submits a block to the node. When the block is valid, the node will forward it to other nodes in the network. When submitting work from getWork, remember to include the suffix.</p>
-<ul><li>
-<p>@param [String] block - Hex-encoded full block (including header, interlink and body).</p>
-</li></ul>
+          
           
           
 
           
           <div class="method-source-code" id="submit_block-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 307</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 385</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">submit_block</span>(<span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;submitBlock&quot;</span>, <span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -1556,13 +1507,13 @@
 
         <div class="method-description">
           
-          <p>syncing - Returns an object with data about the sync status or `false`.</p>
+          
           
           
 
           
           <div class="method-source-code" id="syncing-source">
-            <pre><span class="ruby-comment"># File lib/api.rb, line 313</span>
+            <pre><span class="ruby-comment"># File lib/api.rb, line 393</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">syncing</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;syncing&quot;</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
