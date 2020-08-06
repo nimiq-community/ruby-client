@@ -22,6 +22,9 @@ describe "Nimiq", type: :request do
   # Initialize
   before(:all) do
     options = {
+      #   host: "https://rpc.nimiq.observer/",
+      #   port: 433,
+
       host: "localhost",
       port: 8005,
       user: "user",
@@ -89,14 +92,12 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve information related to an account.
     it "Must be able to retrieve information related to an account." do
-      expect(@nimiq.get_account("NQ30 JLD6 U347 DFVU 40J3 F93V 9TCF YMMX RKY3")).to be_a_kind_of(Object)
+      expect(@nimiq.get_account(@seco_addr)).to be_a_kind_of(Object)
     end
 
     # Test suite for client to retrieve balance of account.
     it "Must be able to retrieve balance of account." do
-      #   puts @nimiq.get_balance("NQ30 JLD6 U347 DFVU 40J3 F93V 9TCF YMMX RKY3") # miner
-      #   puts @nimiq.get_balance("NQ70 46LN 1SKC KGFN VV8U G92N XC4X 9VFB SBVJ") # this rpc
-      expect(@nimiq.get_balance(@main_addr)).to be_a_kind_of(Numeric)
+      expect(@nimiq.get_balance(@main_addr)).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve block by hash.
@@ -126,12 +127,12 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve the number of transactions in a block by block hash.
     it "Must be able to retrieve the number of transactions in a block by block hash." do
-      expect(@nimiq.get_block_transaction_count_by_hash("dfe7d166f2c86bd10fa4b1f29cd06c13228f893167ce9826137c85758645572f")).to be_a_kind_of(Numeric)
+      expect(@nimiq.get_block_transaction_count_by_hash("dfe7d166f2c86bd10fa4b1f29cd06c13228f893167ce9826137c85758645572f")).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve the number of transactions in a block by block number.
     it "Must be able to retrieve the number of transactions in a block by block number." do
-      expect(@nimiq.get_block_transaction_count_by_number(76415)).to be_a_kind_of(Numeric)
+      expect(@nimiq.get_block_transaction_count_by_number(76415)).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve information about a transaction by block hash and transaction index position.
@@ -166,7 +167,7 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve the number of hashes per second that the node is mining with.
     it "Must be able to retrieve the number of hashes per second that the node is mining with." do
-      expect(@nimiq.hashrate()).to be_a_kind_of(Numeric)
+      expect(@nimiq.hashrate()).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to set the log level of the node.
@@ -191,22 +192,22 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to set the number of CPU threads for the miner.
     it "Must be able to set the number of CPU threads for the miner." do
-      expect(@nimiq.miner_threads(2)).to be_a_kind_of(Numeric)
+      expect(@nimiq.miner_threads(2)).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve the number of CPU threads for the miner.
     it "Must be able to retrieve the number of CPU threads for the miner." do
-      expect(@nimiq.miner_threads()).to be_a_kind_of(Numeric)
+      expect(@nimiq.miner_threads()).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to set the minimum fee per byte.
     it "Must be able to set the minimum fee per byte." do
-      expect(@nimiq.min_fee_per_byte(1)).to be_a_kind_of(Numeric)
+      expect(@nimiq.min_fee_per_byte(1)).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve the minimum fee per byte.
     it "Must be able to retrieve the minimum fee per byte." do
-      expect(@nimiq.min_fee_per_byte()).to be_a_kind_of(Numeric)
+      expect(@nimiq.min_fee_per_byte()).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve if client is actively mining new blocks.
@@ -216,7 +217,7 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to retrieve the number of peers currently connected to the client.
     it "Must be able to retrieve the number of peers currently connected to the client." do
-      expect(@nimiq.peer_count()).to be_a_kind_of(Numeric)
+      expect(@nimiq.peer_count()).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve the list of peers known to the client.
@@ -231,22 +232,22 @@ describe "Nimiq", type: :request do
 
     # Test suite for client to set the mining pool.
     it "Must be able to set the mining pool." do
-      expect(@nimiq.pool("eu.nimpool.io:8444")).to be_a_kind_of(String)
+      expect(@nimiq.pool("eu.nimpool.io:8444")).to be_a_kind_of(String).or be(nil)
     end
 
     # Test suite for client to retrieve the mining pool.
     it "Must be able to retrieve the mining pool." do
-      expect(@nimiq.pool()).to be_a_kind_of(String)
+      expect(@nimiq.pool()).to be_a_kind_of(String).or be(nil)
     end
 
     # Test suite for client to retrieve the confirmed mining pool balance.
     it "Must be able to retrieve the confirmed mining pool balance." do
-      expect(@nimiq.pool_confirmed_balance()).to be_a_kind_of(Numeric)
+      expect(@nimiq.pool_confirmed_balance()).to be_a_kind_of(Integer)
     end
 
     # Test suite for client to retrieve the connection state to mining pool.
     it "Must be able to retrieve the connection state to mining pool." do
-      expect(@nimiq.pool_connection_state()).to be_a_kind_of(Numeric)
+      expect(@nimiq.pool_connection_state()).to be_a_kind_of(Integer)
     end
 
     # Makes @signed_transaction
@@ -265,7 +266,13 @@ describe "Nimiq", type: :request do
     # NEW
     # Test suite for client to retrieve a transaction information.
     it "Must be able to retrieve a transaction information." do
-      expect(@nimiq.get_raw_transaction_info(@signed_transaction)).to be_a_kind_of(Object)
+      #   expect(@nimiq.get_raw_transaction_info(@signed_transaction)).to be_a_kind_of(Object)
+      expect(@nimiq.get_raw_transaction_info("009de5aeefe9fa3b4017cbf460e863831808d121b614ae034337a69cdabbeeb4185a5cd4a2051f6277fd0d5bee0f59e45b514dd88b000000000000006400000000000000000007f8642afa9861e3dd9c708318aba517f0d40882af99579841cc78afd395927de3913b88c87990659a6c55b2ee28c073559520fe685c051f2daa7cc63ffb9caa9ac9e20f")).to be_a_kind_of(Object)
+    end
+
+    # Test suite for client to retrieve an object with data about the sync status.
+    it "Must be able to retrieve an object with data about the sync status." do
+      expect(@nimiq.syncing()[:startingBlock]).to be > 0
     end
 
     # # Must have at least some NIM to be able to send it to another address
@@ -293,9 +300,5 @@ describe "Nimiq", type: :request do
     #   expect(@nimiq.submit_block(block)).to be("")
     # end
 
-    # Test suite for client to retrieve an object with data about the sync status.
-    it "Must be able to retrieve an object with data about the sync status." do
-      expect(@nimiq.syncing()[:startingBlock]).to be > 0
-    end
   end
 end

@@ -14,7 +14,7 @@ Fast, easy and fun to use! for more information visit the [Nimiq website](https:
 
 ## Usage
 
-**Installation:**
+**Installation:** (**[Gem](https://rubygems.org/gems/ruby-client)**)
 ```
 gem install ruby-client
 ```
