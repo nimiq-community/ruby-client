@@ -20,7 +20,7 @@ require "net/http"
 # :nodoc: all
 module ClientRPC
   class Connect
-    attr_accessor :options, :uri
+    attr_accessor :options, :uri, :ssl
 
     DEFAULTS = {
       host: "localhost",
@@ -54,6 +54,7 @@ module ClientRPC
       user = uri.user
       pass = uri.password
       http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true if @ssl
       request = Net::HTTP::Get.new(uri.request_uri)
       request.basic_auth(user, pass)
       request.body = request_body("", nil)
@@ -68,6 +69,7 @@ module ClientRPC
       user = uri.user
       pass = uri.password
       http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true if @ssl
       request = Net::HTTP::Post.new(uri.request_uri)
       request.basic_auth(user, pass)
       request.body = request_body(name, params)
@@ -89,6 +91,7 @@ module ClientRPC
         host = options[:host]
         newhost = url_strip(host.dup)
         if (options[:host].include? "https")
+          @ssl = true
           return "https://#{options[:user]}:#{options[:pass]}@#{newhost}:#{options[:port]}"
         else
           return "http://#{options[:user]}:#{options[:pass]}@#{newhost}:#{options[:port]}"
