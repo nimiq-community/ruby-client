@@ -28,8 +28,8 @@ module Nimiq
     include Api
 
     def initialize(opts)
+      puts "Connecting to #{opts[:host]}:#{opts[:port]}"
       return @rpc = ClientRPC::Connect.new(opts)
-      puts "Connecting to #{@opts}"
     end
 
     # Sends a raw request to the Nimiq node.

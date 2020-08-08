@@ -22,13 +22,10 @@ describe "Nimiq", type: :request do
   # Initialize
   before(:all) do
     options = {
-      #   host: "https://rpc.nimiq.observer/",
-      #   port: 433,
-
       host: "localhost",
-      port: 8005,
-      user: "user",
-      pass: "pass",
+      port: "8648",
+    #   user: "user",
+    #   pass: "pass",
     # dev: true,
     }
     @main_addr = "NQ70 46LN 1SKC KGFN VV8U G92N XC4X 9VFB SBVJ" # Node address

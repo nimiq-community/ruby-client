@@ -66,11 +66,11 @@ module ClientRPC
     private
 
     def request_http_post(name, params)
-      user = uri.user
-      pass = uri.password
+      user = URI.decode(uri.user)
+      pass = URI.decode(uri.password)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true if @ssl
-      request = Net::HTTP::Post.new(uri.request_uri)
+      request = Net::HTTP::Post.new(uri)
       request.basic_auth(user, pass)
       request.body = request_body(name, params)
       request["Content-Type"] = "application/json".freeze
@@ -92,12 +92,24 @@ module ClientRPC
         newhost = url_strip(host.dup)
         if (options[:host].include? "https")
           @ssl = true
-          return "https://#{options[:user]}:#{options[:pass]}@#{newhost}:#{options[:port]}"
+          if options[:pass]
+            return "https://#{options[:user]}:#{URI.encode(options[:pass])}@#{newhost}:#{options[:port]}"
+          else
+            return "https://#{options[:user]}:@#{newhost}:#{options[:port]}"
+          end
         else
-          return "http://#{options[:user]}:#{options[:pass]}@#{newhost}:#{options[:port]}"
+          if options[:pass]
+            return "http://#{options[:user]}:#{URI.encode(options[:pass])}@#{newhost}:#{options[:port]}"
+          else
+            return "http://#{options[:user]}:@#{newhost}:#{options[:port]}"
+          end
         end
       else
-        return "http://#{options[:user]}:#{options[:pass]}@#{options[:host]}:#{options[:port]}"
+        if options[:pass]
+          return "http://#{options[:user]}:#{URI.encode(options[:pass])}@#{options[:host]}:#{options[:port]}"
+        else
+          return "http://#{options[:user]}:@#{options[:host]}:#{options[:port]}"
+        end
       end
     end
 
