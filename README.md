@@ -14,13 +14,13 @@ Fast, easy and fun to use! for more information visit the [Nimiq website](https:
 
 ## Usage
 
-**Installation:** (**[Gem](https://rubygems.org/gems/ruby-client)**)
+**Installation:** (**[Gem](https://rubygems.org/gems/nimiq-ruby-client)**)
 ```
-gem install ruby-client
+gem install nimiq-ruby-client
 ```
-> or add in `Gemfile`
+or add in the `Gemfile`
 ```
-gem "ruby-client"
+gem "nimiq-ruby-client"
 ```
 
 **Start using the Nimiq Ruby Client:**
@@ -38,7 +38,6 @@ options = {
 nimiq = Nimiq::Client.new(options)
 consensus = nimiq.consensus()
 get_balance = nimiq.get_balance("NQ27 B9ED 98G5 3VH7 FY8D BFP0 XNF4 BD8L TN4B")
-
 puts "Consensus #{consensus}"
 puts "My account balance #{get_balance}"
 ```

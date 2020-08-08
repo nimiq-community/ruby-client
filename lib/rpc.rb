@@ -79,7 +79,7 @@ module ClientRPC
 
     def request_body(name, params)
       Oj.dump({
-        id: "rpc",
+        id: 0,
         jsonrpc: "2.0",
         method: name,
         params: params,

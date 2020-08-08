@@ -4,7 +4,7 @@
 require_relative "lib/ruby-client"
 
 Gem::Specification.new do |spec|
-  spec.name = "ruby-client"
+  spec.name = "nimiq-ruby-client"
   spec.version = Nimiq::VERSION
   spec.authors = ["jxdv"]
   spec.email = ["root@localhost"]
