@@ -26,7 +26,7 @@ gem "nimiq-ruby-client"
 **Start using the Nimiq Ruby Client:**
 
 ```ruby
-require "ruby-client"
+require "nimiq-ruby-client"
 
 options = {
   host: "http://127.0.0.1",

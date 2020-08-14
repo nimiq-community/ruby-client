@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-client (1.2.1)
-      oj (~> 2.15)
+    nimiq-ruby-client (1.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -41,7 +40,6 @@ GEM
     minitest (5.14.1)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
-    oj (2.18.5)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -87,8 +85,8 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (~> 5.0)
+  nimiq-ruby-client!
   rspec-rails (~> 3.5)
-  ruby-client!
   sorbet
   sorbet-runtime
 
