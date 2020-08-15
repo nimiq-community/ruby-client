@@ -44,7 +44,7 @@ puts "My account balance #{get_balance}"
 
 ## Documentation
 
-To know more about what you can possibly do using this library, check the [**documentation**](https://jxdv.github.io/ruby-client/).
+To know more about what you can possibly do using this library, check the [**documentation**](https://nimiq-community.github.io/ruby-client/).
 
 ## Developments
 
