@@ -75,7 +75,7 @@
   
     <li><a href="./bin/setup.html">setup</a>
   
-    <li><a href="./ruby-client_gemspec.html">ruby-client.gemspec</a>
+    <li><a href="./nimiq-ruby-client_gemspec.html">nimiq-ruby-client.gemspec</a>
   
   </ul>
 </div>
@@ -85,18 +85,14 @@
 
 <main role="main" aria-label="Page Rakefile">
 
-<p># require “bundler/gem_tasks” require “rake/testtask”</p>
+<p>require “rake/testtask”</p>
 
 <p>Rake::TestTask.new do |t|</p>
 
-<pre class="ruby"><span class="ruby-identifier">t</span>.<span class="ruby-identifier">pattern</span> = <span class="ruby-string">&quot;spec  _spec.rb&quot;</span>
+<pre class="ruby"><span class="ruby-identifier">t</span>.<span class="ruby-identifier">pattern</span> = <span class="ruby-string">&quot;spec/*_spec.rb&quot;</span>
 </pre>
 
 <p>end</p>
-
-<p># Rake::TestTask.new(:test) do |t| #   t.libs &lt;&lt; “test” #   t.libs &lt;&lt; “lib” #   t.test_files = FileList[“test/   *_test.rb”] # end</p>
-
-<p># task :default =&gt; :test</p>
 
 </main>
 

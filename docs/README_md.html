@@ -90,7 +90,7 @@
   
     <li><a href="./bin/setup.html">setup</a>
   
-    <li><a href="./ruby-client_gemspec.html">ruby-client.gemspec</a>
+    <li><a href="./nimiq-ruby-client_gemspec.html">nimiq-ruby-client.gemspec</a>
   
   </ul>
 </div>
@@ -118,11 +118,11 @@
 
 <h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p><strong>Installation:</strong> (<strong><a href="https://rubygems.org/gems/ruby-client">Gem</a></strong>) <code> gem install ruby-client </code></p>
+<p><strong>Installation:</strong> (<strong><a href="https://rubygems.org/gems/nimiq-ruby-client">Gem</a></strong>) <code> gem install nimiq-ruby-client </code> or add in the <code>Gemfile</code> <code> gem &quot;nimiq-ruby-client&quot; </code></p>
 
 <p><strong>Start using the <a href="Nimiq.html"><code>Nimiq</code></a> Ruby Client:</strong></p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;ruby-client&quot;</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;nimiq-ruby-client&quot;</span>
 
 <span class="ruby-identifier">options</span> = {
   <span class="ruby-value">host:</span> <span class="ruby-string">&quot;http://127.0.0.1&quot;</span>,
@@ -134,14 +134,13 @@
 <span class="ruby-identifier">nimiq</span> = <span class="ruby-constant">Nimiq</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
 <span class="ruby-identifier">consensus</span> = <span class="ruby-identifier">nimiq</span>.<span class="ruby-identifier">consensus</span>()
 <span class="ruby-identifier">get_balance</span> = <span class="ruby-identifier">nimiq</span>.<span class="ruby-identifier">get_balance</span>(<span class="ruby-string">&quot;NQ27 B9ED 98G5 3VH7 FY8D BFP0 XNF4 BD8L TN4B&quot;</span>)
-
 <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Consensus #{consensus}&quot;</span>
 <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;My account balance #{get_balance}&quot;</span>
 </pre>
 
 <h2 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>To know more about what you can possibly do using this library, check the <a href="https://jxdv.github.io/ruby-client/">documentation</a>.</p>
+<p>To know more about what you can possibly do using this library, check the <a href="https://nimiq-community.github.io/ruby-client/">documentation</a>.</p>
 
 <h2 id="label-Developments">Developments<span><a href="#label-Developments">&para;</a> <a href="#top">&uarr;</a></span></h2>
 

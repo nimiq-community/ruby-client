@@ -143,10 +143,10 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/ruby-client.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/nimiq-client.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connecting to #{opts[:host]}:#{opts[:port]}&quot;</span>
   <span class="ruby-keyword">return</span> <span class="ruby-ivar">@rpc</span> = <span class="ruby-constant">ClientRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Connect</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connecting to #{@opts}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -185,7 +185,7 @@
 
           
           <div class="method-source-code" id="ping-source">
-            <pre><span class="ruby-comment"># File lib/ruby-client.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/nimiq-client.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ping</span>
   <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">ping_node</span>
   <span class="ruby-ivar">@pingres</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-value">:@pingres</span>)
@@ -219,7 +219,7 @@
 
           
           <div class="method-source-code" id="request-source">
-            <pre><span class="ruby-comment"># File lib/ruby-client.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/nimiq-client.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>
