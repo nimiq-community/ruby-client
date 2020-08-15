@@ -14,19 +14,19 @@ Fast, easy and fun to use! for more information visit the [Nimiq website](https:
 
 ## Usage
 
-**Installation:** (**[Gem](https://rubygems.org/gems/nimiq-ruby-client)**)
+**Installation:** (**[Gem](https://rubygems.org/gems/nimiq-client)**)
 ```
-gem install nimiq-ruby-client
+gem install nimiq-client
 ```
 or add in the `Gemfile`
 ```
-gem "nimiq-ruby-client"
+gem "nimiq-client"
 ```
 
 **Start using the Nimiq Ruby Client:**
 
 ```ruby
-require "nimiq-ruby-client"
+require "nimiq-client"
 
 options = {
   host: "http://127.0.0.1",
