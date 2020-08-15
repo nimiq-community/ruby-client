@@ -4,20 +4,20 @@
 require_relative "lib/nimiq-client"
 
 Gem::Specification.new do |spec|
-  spec.name = "nimiq-ruby-client"
+  spec.name = "nimiq-client"
   spec.version = Nimiq::VERSION
   spec.authors = ["jxdv"]
   spec.email = ["root@localhost"]
 
   spec.summary = %q{Ruby implementation of the Nimiq RPC client specification.}
   spec.description = %q{Ruby implementation of the Nimiq RPC client specification.}
-  spec.homepage = "https://github.com/jxdv/ruby-client"
+  spec.homepage = "https://github.com/nimiq-community/ruby-client"
   spec.license = "Apache-2.0"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/jxdv/ruby-client"
-  spec.metadata["changelog_uri"] = "https://github.com/jxdv/ruby-client/readme.md"
+  spec.metadata["source_code_uri"] = "https://github.com/nimiq-community/ruby-client"
+  spec.metadata["changelog_uri"] = "https://github.com/nimiq-community/ruby-client/readme.md"
 
   spec.add_dependency "oj", "~> 2.15"
 
