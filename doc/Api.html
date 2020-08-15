@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Api - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">T::Sig</span>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-accounts">#accounts</a>
+    
+    <li ><a href="#method-i-block_number">#block_number</a>
+    
+    <li ><a href="#method-i-consensus">#consensus</a>
+    
+    <li ><a href="#method-i-constant">#constant</a>
+    
+    <li ><a href="#method-i-create_account">#create_account</a>
+    
+    <li ><a href="#method-i-create_raw_transaction">#create_raw_transaction</a>
+    
+    <li ><a href="#method-i-get_account">#get_account</a>
+    
+    <li ><a href="#method-i-get_balance">#get_balance</a>
+    
+    <li ><a href="#method-i-get_block_by_hash">#get_block_by_hash</a>
+    
+    <li ><a href="#method-i-get_block_by_number">#get_block_by_number</a>
+    
+    <li ><a href="#method-i-get_block_template">#get_block_template</a>
+    
+    <li ><a href="#method-i-get_block_transaction_count_by_hash">#get_block_transaction_count_by_hash</a>
+    
+    <li ><a href="#method-i-get_block_transaction_count_by_number">#get_block_transaction_count_by_number</a>
+    
+    <li ><a href="#method-i-get_raw_transaction_info">#get_raw_transaction_info</a>
+    
+    <li ><a href="#method-i-get_transaction_by_block_hash_and_index">#get_transaction_by_block_hash_and_index</a>
+    
+    <li ><a href="#method-i-get_transaction_by_block_number_and_index">#get_transaction_by_block_number_and_index</a>
+    
+    <li ><a href="#method-i-get_transaction_by_hash">#get_transaction_by_hash</a>
+    
+    <li ><a href="#method-i-get_transaction_receipt">#get_transaction_receipt</a>
+    
+    <li ><a href="#method-i-get_transactions_by_address">#get_transactions_by_address</a>
+    
+    <li ><a href="#method-i-get_work">#get_work</a>
+    
+    <li ><a href="#method-i-hashrate">#hashrate</a>
+    
+    <li ><a href="#method-i-log">#log</a>
+    
+    <li ><a href="#method-i-mempool">#mempool</a>
+    
+    <li ><a href="#method-i-mempool_content">#mempool_content</a>
+    
+    <li ><a href="#method-i-min_fee_per_byte">#min_fee_per_byte</a>
+    
+    <li ><a href="#method-i-miner_address">#miner_address</a>
+    
+    <li ><a href="#method-i-miner_threads">#miner_threads</a>
+    
+    <li ><a href="#method-i-mining">#mining</a>
+    
+    <li ><a href="#method-i-peer_count">#peer_count</a>
+    
+    <li ><a href="#method-i-peer_list">#peer_list</a>
+    
+    <li ><a href="#method-i-peer_state">#peer_state</a>
+    
+    <li ><a href="#method-i-pool">#pool</a>
+    
+    <li ><a href="#method-i-pool_confirmed_balance">#pool_confirmed_balance</a>
+    
+    <li ><a href="#method-i-pool_connection_state">#pool_connection_state</a>
+    
+    <li ><a href="#method-i-send_raw_transaction">#send_raw_transaction</a>
+    
+    <li ><a href="#method-i-send_transaction">#send_transaction</a>
+    
+    <li ><a href="#method-i-submit_block">#submit_block</a>
+    
+    <li ><a href="#method-i-syncing">#syncing</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Api">
+  <h1 id="module-Api" class="module">
+    module Api
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-rpc" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rpc</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-accounts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accounts</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="accounts-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accounts</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;accounts&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-block_number" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">block_number</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="block_number-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">block_number</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;blockNumber&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-consensus" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consensus</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="consensus-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">consensus</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;consensus&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-constant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">constant</span><span
+            class="method-args">(name, value = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="constant-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">constant</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;constant&quot;</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;constant&quot;</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_account" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_account</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_account-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_account</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;createAccount&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_raw_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_raw_transaction</span><span
+            class="method-args">(transaction)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_raw_transaction-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_raw_transaction</span>(<span class="ruby-identifier">transaction</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;createRawTransaction&quot;</span>, <span class="ruby-identifier">transaction</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_account" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_account</span><span
+            class="method-args">(address)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_account-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_account</span>(<span class="ruby-identifier">address</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getAccount&quot;</span>, <span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_balance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_balance</span><span
+            class="method-args">(address)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_balance-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_balance</span>(<span class="ruby-identifier">address</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBalance&quot;</span>, <span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_block_by_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_block_by_hash</span><span
+            class="method-args">(block_hash, full_transactions = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_block_by_hash-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_by_hash</span>(<span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">full_transactions</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_transactions</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByHash&quot;</span>, <span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">full_transactions</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByHash&quot;</span>, <span class="ruby-identifier">block_hash</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_block_by_number" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_block_by_number</span><span
+            class="method-args">(block_number, full_transactions = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_block_by_number-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_by_number</span>(<span class="ruby-identifier">block_number</span>, <span class="ruby-identifier">full_transactions</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_transactions</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByNumber&quot;</span>, <span class="ruby-identifier">block_number</span>, <span class="ruby-identifier">full_transactions</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockByNumber&quot;</span>, <span class="ruby-identifier">block_number</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_block_template" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_block_template</span><span
+            class="method-args">(address = nil, data_field = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_block_template-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_template</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data_field</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTemplate&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_block_transaction_count_by_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_block_transaction_count_by_hash</span><span
+            class="method-args">(block_hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_block_transaction_count_by_hash-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_transaction_count_by_hash</span>(<span class="ruby-identifier">block_hash</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTransactionCountByHash&quot;</span>, <span class="ruby-identifier">block_hash</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_block_transaction_count_by_number" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_block_transaction_count_by_number</span><span
+            class="method-args">(block_number)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_block_transaction_count_by_number-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_block_transaction_count_by_number</span>(<span class="ruby-identifier">block_number</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getBlockTransactionCountByNumber&quot;</span>, <span class="ruby-identifier">block_number</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_raw_transaction_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_raw_transaction_info</span><span
+            class="method-args">(signed_transaction)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_raw_transaction_info-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_raw_transaction_info</span>(<span class="ruby-identifier">signed_transaction</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getRawTransactionInfo&quot;</span>, <span class="ruby-identifier">signed_transaction</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_transaction_by_block_hash_and_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_transaction_by_block_hash_and_index</span><span
+            class="method-args">(block_hash, transaction_index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_transaction_by_block_hash_and_index-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_block_hash_and_index</span>(<span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">transaction_index</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByBlockHashAndIndex&quot;</span>, <span class="ruby-identifier">block_hash</span>, <span class="ruby-identifier">transaction_index</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_transaction_by_block_number_and_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_transaction_by_block_number_and_index</span><span
+            class="method-args">(block_hash_index, transaction_index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_transaction_by_block_number_and_index-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_block_number_and_index</span>(<span class="ruby-identifier">block_hash_index</span>, <span class="ruby-identifier">transaction_index</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByBlockNumberAndIndex&quot;</span>, <span class="ruby-identifier">block_hash_index</span>, <span class="ruby-identifier">transaction_index</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_transaction_by_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_transaction_by_hash</span><span
+            class="method-args">(transaction_hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_transaction_by_hash-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_by_hash</span>(<span class="ruby-identifier">transaction_hash</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionByHash&quot;</span>, <span class="ruby-identifier">transaction_hash</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_transaction_receipt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_transaction_receipt</span><span
+            class="method-args">(transaction_hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_transaction_receipt-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transaction_receipt</span>(<span class="ruby-identifier">transaction_hash</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionReceipt&quot;</span>, <span class="ruby-identifier">transaction_hash</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_transactions_by_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_transactions_by_address</span><span
+            class="method-args">(address, transactions_number = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_transactions_by_address-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_transactions_by_address</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">transactions_number</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">transactions_number</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionsByAddress&quot;</span>, <span class="ruby-identifier">address</span>, <span class="ruby-identifier">transactions_number</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getTransactionsByAddress&quot;</span>, <span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_work" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_work</span><span
+            class="method-args">(address = nil, data_field = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_work-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_work</span>(<span class="ruby-identifier">address</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data_field</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;getWork&quot;</span>, <span class="ruby-identifier">address</span>, <span class="ruby-identifier">data_field</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hashrate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hashrate</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hashrate-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hashrate</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;hashrate&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">(tag, log_level)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">log</span>(<span class="ruby-identifier">tag</span>, <span class="ruby-identifier">log_level</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;log&quot;</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">log_level</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mempool" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mempool</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mempool-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mempool</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mempool&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mempool_content" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mempool_content</span><span
+            class="method-args">(include_full_transactions = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mempool_content-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mempool_content</span>(<span class="ruby-identifier">include_full_transactions</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mempoolContent&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-min_fee_per_byte" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">min_fee_per_byte</span><span
+            class="method-args">(set_min_fee = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="min_fee_per_byte-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">min_fee_per_byte</span>(<span class="ruby-identifier">set_min_fee</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">set_min_fee</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minFeePerByte&quot;</span>, <span class="ruby-identifier">set_min_fee</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minFeePerByte&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-miner_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">miner_address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="miner_address-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">miner_address</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minerAddress&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-miner_threads" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">miner_threads</span><span
+            class="method-args">(set_threads = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="miner_threads-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">miner_threads</span>(<span class="ruby-identifier">set_threads</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">set_threads</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minerThreads&quot;</span>, <span class="ruby-identifier">set_threads</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;minerThreads&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mining" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mining</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mining-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mining</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;mining&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-peer_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peer_count</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="peer_count-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_count</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerCount&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-peer_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peer_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="peer_list-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_list</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerList&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-peer_state" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peer_state</span><span
+            class="method-args">(peer_address)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="peer_state-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peer_state</span>(<span class="ruby-identifier">peer_address</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;peerState&quot;</span>, <span class="ruby-identifier">peer_address</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pool" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool</span><span
+            class="method-args">(pool_address_or_action = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool</span>(<span class="ruby-identifier">pool_address_or_action</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pool_address_or_action</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;pool&quot;</span>, <span class="ruby-identifier">pool_address_or_action</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;pool&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pool_confirmed_balance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_confirmed_balance</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool_confirmed_balance-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool_confirmed_balance</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;poolConfirmedBalance&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pool_connection_state" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_connection_state</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool_connection_state-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pool_connection_state</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;poolConnectionState&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-send_raw_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_raw_transaction</span><span
+            class="method-args">(signed_transaction)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_raw_transaction-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_raw_transaction</span>(<span class="ruby-identifier">signed_transaction</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;sendRawTransaction&quot;</span>, <span class="ruby-identifier">signed_transaction</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-send_transaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_transaction</span><span
+            class="method-args">(transaction)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_transaction-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">send_transaction</span>(<span class="ruby-identifier">transaction</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;sendTransaction&quot;</span>, <span class="ruby-identifier">transaction</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-submit_block" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">submit_block</span><span
+            class="method-args">(block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="submit_block-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">submit_block</span>(<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;submitBlock&quot;</span>, <span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-syncing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">syncing</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="syncing-source">
+            <pre><span class="ruby-comment"># File lib/api.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">syncing</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@rpc</span>.<span class="ruby-identifier">request</span>(<span class="ruby-string">&quot;syncing&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
