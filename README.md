@@ -1,29 +1,16 @@
-# Nimiq Blockchain - Ruby RPC Client
+# Nimiq Ruby Client
 
 > Ruby implementation of the Nimiq RPC client specs.
 
-## Information
+## About
 
-Nimiq Ruby RPC client. It will allow you to interact with the Nimiq blockchain, collect data, update data, sync and more. This library covers all the current [Nimiq JSON-RPC specification](https://github.com/nimiq/core-js/wiki/JSON-RPC-API#remotejs-client).
+This Nimiq Ruby RPC client will allow you to interact with the Nimiq blockchain, manage transactions and balances, and more. This library covers the current [Nimiq JSON-RPC specification](https://github.com/nimiq/core-js/wiki/JSON-RPC-API#remotejs-client).
 
 # What is Nimiq?
 
-Inspired by Bitcoin, Nimiq is a blockchain that seamlessly runs in your browser.
-
-Fast, easy and fun to use! for more information visit the [Nimiq website](https://www.nimiq.com/).
+Nimiq is a blockchain that seamlessly runs in your browser. It's fast, easy and fun to use! For more information visit the [Nimiq website](https://www.nimiq.com/).
 
 ## Usage
-
-**Installation:** (**[Gem](https://rubygems.org/gems/nimiq-client)**)
-```
-gem install nimiq-client
-```
-or add in the `Gemfile`
-```
-gem "nimiq-client"
-```
-
-**Start using the Nimiq Ruby Client:**
 
 ```ruby
 require "nimiq-client"
@@ -42,15 +29,37 @@ puts "Consensus #{consensus}"
 puts "My account balance #{get_balance}"
 ```
 
+## Installation
+
+Via the [Gem](https://rubygems.org/gems/nimiq-client)
+
+```bash
+gem install nimiq-client
+```
+
+or add it to your `Gemfile`
+
+```bash
+gem "nimiq-client"
+```
+
 ## Documentation
 
 To know more about what you can possibly do using this library, check the [**documentation**](https://nimiq-community.github.io/ruby-client/).
 
-## Developments
+## Build
 
 This section is for developments. If you only want to use this client go to the [Usage](#Usage) section. After cloning the repo, run `bundle` to install the required dependencies.
 
-**Testing**: Run tests by typing **`rspec --format documentation`**. If you are connecting to a private node that requires username and password, don't forget to set set these on the `options` object in the configuration spec file.
+## Tests
+
+Run tests with
+
+```bash
+rspec --format documentation
+```
+
+If you are connecting to a private node that requires username and password, set these on the `options` object in the configuration spec file.
 
 Note that it requires a running Nimiq RPC node, to connect to.
 
@@ -58,7 +67,8 @@ Note that it requires a running Nimiq RPC node, to connect to.
 
 This implementation was originally contributed by [jxdv](https://github.com/jxdv/).
 
-Bug reports and pull requests are welcome.
+Bug reports and pull requests are welcome. Please refer to the [issue tracker](https://github.com/nimiq-community/ruby-client/issues) for ideas.
+
 
 ## License
 
