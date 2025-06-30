@@ -2,6 +2,11 @@
 
 > Ruby implementation of the Nimiq RPC client specs.
 
+This repository is archived: Nimiq PoS has been launched and this RPC client only supports the
+old PoW RPC specification. As of now, there is no Ruby RPC client implementation. Please
+[contact us](mailto:community@nimiq.com) if you are interested in implementing and supporting the
+Nimiq ecosystem for Ruby.
+
 ## About
 
 This Nimiq Ruby RPC client will allow you to interact with the Nimiq blockchain, manage transactions and balances, and more. This library covers the current [Nimiq JSON-RPC specification](https://github.com/nimiq/core-js/wiki/JSON-RPC-API#remotejs-client).
